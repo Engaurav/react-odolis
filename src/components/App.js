@@ -7,8 +7,13 @@ import TodoList from './TodoList';
 
 class App extends Component {
   async componentDidMount(){
-    this.props.getTaskList();
+    await fetch("https://jsonplaceholder.typicode.com/todos")
+      .then((response) => response.json())
+      .then((json) => {
+        this.props.getTaskList(json)
+      });
   }
+  
   render() {
     return (
       <div>

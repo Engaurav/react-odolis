@@ -3,19 +3,13 @@ export const ADD_TASK = "ADD_TASK";
 
 
 
-export const getTaskList = () => {
-    console.log("get task called")
-    const tasks = [
-        {
-            name: "Gaurav"
-        },
-        {
-            name: "Aman"
-        }
-    ]
+
+
+
+export const getTaskList =  (tasks=[]) => {
     return{
         type: GET_TASKLIST,
-        payload: tasks
+        payload : tasks
     }
 }
 
