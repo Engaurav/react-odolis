@@ -13,12 +13,14 @@ class App extends Component {
         this.props.getTaskList(json)
       });
   }
-  
+
   render() {
     return (
-      <div>
+      <div className='App'>
         <h1>Todo App</h1>
-        <TodoList/>
+        <div className='Todolist'>
+          <TodoList/>
+        </div>
       </div>
     )
   }
