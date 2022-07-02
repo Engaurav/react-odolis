@@ -5,30 +5,28 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import { Table } from "react-bootstrap";
 
 class TodoList extends Component {
+  
   render() {
     const tasks = this.props.tasks;
     return (
-      <div>
-        <h1>TasksList</h1>
-        <div>
           <Table striped bordered hover>
             <thead>
               <tr>
                 <th>S.No</th>
                 <th>Tasks</th>
+                <th>Update</th>
                 <th>Delete</th>
               </tr>
             </thead>
             <tbody>
-              {(tasks.length === 0) && <div>No Data</div>}
+              
+              {(tasks.length === 0) && <tr className="app-spinner"></tr>}
               {tasks.map((task, index) => {
-                return <Task task={task} key={index} />;
+                return <Task task={task} key={index} sn={index} />;
               })}
               
             </tbody>
           </Table>
-        </div>
-      </div>
     );
   }
 }

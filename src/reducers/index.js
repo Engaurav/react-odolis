@@ -1,5 +1,6 @@
 import {combineReducers} from 'redux';
-import { GET_TASKLIST, ADD_TASK } from '../actions';
+import { GET_TASKLIST, ADD_TASK, DELETE_TASK } from '../actions';
+
 
 
 
@@ -9,8 +10,13 @@ const taskReducers = (state=[], action) => {
             return action.payload;
 
         case ADD_TASK:
-            state = state.concat(action.payload)
-            break;
+            return state = [action.payload,...state];
+        case DELETE_TASK:
+            // console.log("Delete",action.payload)
+            state = state.filter((val,index)=>{
+                return index !== action.payload;
+            })
+            return state;
         default:
             return state;
     }

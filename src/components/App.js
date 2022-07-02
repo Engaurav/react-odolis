@@ -4,6 +4,7 @@ import { getTaskList } from '../actions';
 import {connect} from 'react-redux';
 import {bindActionCreators} from 'redux';
 import TodoList from './TodoList';
+import TodoInput from './TodoInput';
 
 class App extends Component {
   async componentDidMount(){
@@ -17,7 +18,13 @@ class App extends Component {
   render() {
     return (
       <div className='App'>
-        <h1>Todo App</h1>
+
+
+        <h1 className='h1-color'> Todo App</h1>
+        
+        <TodoInput/>
+
+
         <div className='Todolist'>
           <TodoList/>
         </div>

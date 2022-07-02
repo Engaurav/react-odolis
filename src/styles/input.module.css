@@ -1,0 +1,14 @@
+.formcontainer{
+    text-align: left;
+    margin: 20px 0;
+    width: 80%;
+    margin-left: 10%;
+    color: #e76e54;
+    border: solid gainsboro;
+    padding: 10px;
+}
+
+.forminput{
+    width: 92%;
+    height: 45px;
+}
