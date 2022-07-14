@@ -37,7 +37,6 @@ class Task extends Component {
             // }).then((data)=>this.props.deleteTask(id));
         //}
 
-        
     }
     render() {
         const {  title } = this.props.task;
@@ -58,7 +57,7 @@ class Task extends Component {
                     <button onClick={()=>this.handleDeleteTask(this.props.sn)}><img src='https://cdn-icons-png.flaticon.com/512/1632/1632602.png' alt='Delete' width="30px"/></button>
                 </td> }
 
-                { this.state.edit &&  <TaskEdit task={title} />}
+                { this.state.edit &&  <TaskEdit task={this.props.task} sn = {this.props.sn} handleShowEditForm= {this.showEditForm}/>}
 
                 { this.state.edit && <td className={styles.tdCenter}>
                     <button onClick={()=>this.showEditForm(this.props.sn,title)}><img src='https://cdn-icons-png.flaticon.com/512/753/753345.png' alt='Update' width="30px"/></button>

@@ -1,6 +1,7 @@
 export const GET_TASKLIST = "GET_TASKLIST";
 export const ADD_TASK = "ADD_TASK";
 export const DELETE_TASK = "DELETE_TASK";
+export const UPDATE_TASK = "UPDATE_TASK";
 
 
 
@@ -9,7 +10,6 @@ export const DELETE_TASK = "DELETE_TASK";
 
 
 export const getTaskList =  (tasks=[]) => {
-    console.log("action",tasks)
     return{
         type: GET_TASKLIST,
         payload : tasks
@@ -30,3 +30,15 @@ export const deleteTask = (id) =>{
         payload : id
     }
 }
+
+export const updateTask = (sn,task) =>{
+    // console.log("SN",sn,"Task",task);
+    return {
+        type : UPDATE_TASK,
+        payload : {
+            sn,
+            task
+        }
+    }
+}
+
